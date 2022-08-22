@@ -1,5 +1,11 @@
-# Jam Template
+# SLINGSHOT (Working title)
 Template for use in jams
+
+## Handy links:
+
+- [Jam page]()
+- [Google Doc](https://docs.google.com/document/d/1H0ljKJEOFtglCE2RuVht54gbZmVQaGZP7iVKvTFHxA4/edit?usp=sharing)
+- [Project Board]()
 
 ## Components
 

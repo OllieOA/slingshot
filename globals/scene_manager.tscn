@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://globals/scene_manager.gd" type="Script" id=1]
 [ext_resource path="res://ui/shaders/vignette_shader.tres" type="Shader" id=2]
+[ext_resource path="res://scenes/test_scene.tscn" type="PackedScene" id=3]
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 2 )
@@ -27,7 +28,7 @@ tracks/0/keys = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
-scenes = [ "", "" ]
+scenes = [ ExtResource( 3 ) ]
 
 [node name="scene_block" type="ColorRect" parent="."]
 unique_name_in_owner = true

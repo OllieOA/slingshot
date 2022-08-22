@@ -5,8 +5,8 @@ onready var transition_animator = $"%transition_animator" as AnimationPlayer
 onready var scene_block = $"%scene_block" as ColorRect
 
 var _scene_dict = {}
-var _current_scene: Resource
-var _next_scene: Resource
+var _current_scene
+var _next_scene
 
 const transition_shaders := {
 	"fade": preload("res://ui/shaders/fade_shader.tres"),
