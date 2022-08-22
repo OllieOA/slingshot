@@ -10,12 +10,12 @@ enum State {AIMING, LAUNCHING, LAUNCHED, FLYING, LANDED, VIEWING_MAP}
 var _state: int setget _set_state
 
 # Launch variables
-var _base_launch_power := 200.0
+var _base_launch_power := 3000.0
 var _launch_angle_vector := Vector2.ZERO
 var _launch_angle_rads := 0.0
 
 # Flight variables
-var _jet_strength := 1.0
+var _jet_strength := 10.0
 var _horizontal_flight_strength := 0.0
 var _vertical_flight_strength := 0.0
 var _jet_vector := Vector2.ZERO
@@ -26,7 +26,7 @@ func _ready() -> void:
 	aiming_bar.hide()
 	_state = State.LANDED
 
-
+	
 func _physics_process(_delta: float) -> void:
 	match _state:
 		State.AIMING:
@@ -40,14 +40,15 @@ func _physics_process(_delta: float) -> void:
 			_set_state(State.FLYING)
 		State.FLYING:
 			# Fly through the air, add jetpack stabilisers
-			_handle_flying()
+			_handle_jetpack()
 		State.LANDED:
 			# Transition to aiming
 			aiming_arrow.show()
 			_set_state(State.AIMING)
 		State.VIEWING_MAP:
 			pass
-
+			
+# STATE MACHINE LOGIC
 
 func _handle_aiming() -> void:
 	if Input.is_action_pressed("main_click"):
@@ -71,7 +72,7 @@ func _handle_launching() -> void:
 		_set_state(State.LAUNCHED)
 
 
-func _handle_flying() -> void:
+func _handle_jetpack() -> void:
 	_horizontal_flight_strength = Input.get_axis("jet_left", "jet_right")
 	_vertical_flight_strength = Input.get_axis("jet_up", "jet_down")
 	_jet_vector = Vector2(_horizontal_flight_strength, _vertical_flight_strength)
@@ -87,6 +88,10 @@ func _handle_flying() -> void:
 			jet_particles.emitting = false
 
 
+# SETTERS AND GETTERS
 
 func _set_state(new_state: int) -> void:
 	_state = new_state
+
+
+# SIGNAL CALLBACKS
