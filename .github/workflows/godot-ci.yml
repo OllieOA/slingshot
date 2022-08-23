@@ -42,7 +42,7 @@ jobs:
         env:
           BUTLER_CREDENTIALS: ${{ secrets.BUTLER_API_KEY }}
           CHANNEL: web
-          ITCH_GAME: [LINK]
+          ITCH_GAME: slingshot
           ITCH_USER: ollieoa
           PACKAGE: build/web
     
