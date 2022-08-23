@@ -7,7 +7,7 @@
 [sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 2 )
 shader_param/vignette_colour = Color( 0, 0, 0, 1 )
-shader_param/intensity = 0.0
+shader_param/intensity = 1.0
 
 [sub_resource type="Animation" id=3]
 resource_name = "fade"

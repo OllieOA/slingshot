@@ -1,7 +1,7 @@
 class_name Astronaut extends RigidBody2D
 
 # Get nodes
-onready var player_camera = $"$player_camera"
+onready var player_camera = $"%player_camera"
 onready var aiming_arrow = $"%aiming_arrow"
 onready var aiming_bar = $"%aiming_bar"
 onready var jet_particles = $"%jet_particles"
