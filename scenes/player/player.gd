@@ -10,12 +10,12 @@ enum State {AIMING, LAUNCHING, LAUNCHED, FLYING, LANDED, VIEWING_MAP}
 var _state: int setget _set_state
 
 # Launch variables
-var _base_launch_power := 3000.0
+var _base_launch_power := 300.0
 var _launch_angle_vector := Vector2.ZERO
 var _launch_angle_rads := 0.0
 
 # Flight variables
-var _jet_strength := 10.0
+var _jet_strength := 1.0
 var _horizontal_flight_strength := 0.0
 var _vertical_flight_strength := 0.0
 var _jet_vector := Vector2.ZERO

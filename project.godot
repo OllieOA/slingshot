@@ -12,15 +12,22 @@ _global_script_classes=[ {
 "base": "RigidBody2D",
 "class": "Astronaut",
 "language": "GDScript",
-"path": "res://scenes/player.gd"
+"path": "res://scenes/player/player.gd"
+}, {
+"base": "Area2D",
+"class": "BaseGravField",
+"language": "GDScript",
+"path": "res://scenes/components/base_grav_field.gd"
 } ]
 _global_script_class_icons={
-"Astronaut": ""
+"Astronaut": "",
+"BaseGravField": ""
 }
 
 [application]
 
-config/name="Slightshot"
+config/name="Slingshot"
+config/description="Game made for the Brackeys Game Jam 2022.2"
 run/main_scene="res://scenes/test_scene.tscn"
 boot_splash/image="res://ui/gremlindevelopment_splash_screen.png"
 
