@@ -19,8 +19,8 @@ texture = ExtResource( 1 )
 
 [node name="debris" type="Node2D" parent="."]
 
-[node name="example_debris" type="StaticBody2D" parent="debris"]
-position = Vector2( 162, 517 )
+[node name="example_debris" type="StaticBody2D" parent="debris" groups=["colliders"]]
+position = Vector2( 162, 236 )
 collision_layer = 2
 
 [node name="debris_collision" type="CollisionShape2D" parent="debris/example_debris"]
@@ -31,3 +31,17 @@ scale = Vector2( 3, 3 )
 texture = ExtResource( 4 )
 
 [node name="base_grav_field" parent="debris" instance=ExtResource( 3 )]
+position = Vector2( 0, 236 )
+gravity_point = false
+
+[node name="base_grav_field2" parent="debris" instance=ExtResource( 3 )]
+position = Vector2( 0, 494 )
+gravity_point = false
+
+[node name="base_grav_field3" parent="debris" instance=ExtResource( 3 )]
+position = Vector2( 258, 494 )
+gravity_point = false
+
+[node name="base_grav_field4" parent="debris" instance=ExtResource( 3 )]
+position = Vector2( 258, 756 )
+gravity_point = false

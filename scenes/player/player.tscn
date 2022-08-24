@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scenes/test_scene_assets/tick_texture.png" type="Texture" id=1]
 [ext_resource path="res://scenes/player/player.gd" type="Script" id=2]
 [ext_resource path="res://scenes/test_scene_assets/arrow.png" type="Texture" id=3]
 [ext_resource path="res://scenes/test_scene_assets/astronaut.png" type="Texture" id=4]
 [ext_resource path="res://scenes/test_scene_assets/aiming_bar_over.png" type="Texture" id=5]
+[ext_resource path="res://scenes/player/collision_probe.gd" type="Script" id=6]
 
 [sub_resource type="Curve" id=2]
 max_value = 200.0
@@ -57,10 +58,17 @@ tracks/0/keys = {
 "values": [ 0.0, 100.0, 0.0 ]
 }
 
+[sub_resource type="CircleShape2D" id=9]
+radius = 1.0
+
 [node name="player" type="RigidBody2D"]
 collision_mask = 6
 mode = 2
 script = ExtResource( 2 )
+
+[node name="middle_trajectory" type="Line2D" parent="."]
+unique_name_in_owner = true
+width = 2.0
 
 [node name="jet_particles" type="Particles2D" parent="."]
 unique_name_in_owner = true
@@ -101,9 +109,18 @@ custom_styles/slider = SubResource( 5 )
 custom_styles/grabber_area_highlight = SubResource( 7 )
 custom_styles/grabber_area = SubResource( 8 )
 step = 0.1
-value = 10.8
+value = 85.0
 editable = false
 scrollable = false
 
 [node name="pulse_animation" type="AnimationPlayer" parent="aiming_bar"]
 anims/pulse = SubResource( 6 )
+
+[node name="collision_probe" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 128
+collision_mask = 4
+script = ExtResource( 6 )
+
+[node name="probe_shape" type="CollisionShape2D" parent="collision_probe"]
+shape = SubResource( 9 )
